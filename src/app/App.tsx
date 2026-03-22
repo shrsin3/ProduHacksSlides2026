@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { TitleSlide } from './components/TitleSlide';
 import { ProblemSlide } from './components/ProblemSlide';
 import { SolutionSlide } from './components/SolutionSlide';
+import { RoadmapSlide } from './components/RoadmapSlide';
 import { TechStackSlide } from './components/TechStackSlide';
 import { ImpactSlide } from './components/ImpactSlide';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -10,6 +11,7 @@ const slides = [
   TitleSlide,
   ProblemSlide,
   SolutionSlide,
+  RoadmapSlide,
   TechStackSlide,
   ImpactSlide,
 ];
