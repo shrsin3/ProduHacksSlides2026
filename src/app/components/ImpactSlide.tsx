@@ -1,13 +1,12 @@
 import { motion } from 'motion/react';
-import { Heart, Users, Clock, TrendingUp, ArrowRight } from 'lucide-react';
-import logo from "../../assets/937ad1a56245dc90b89d5720a3ae46d97d7c2e84.png";
+import { Heart, Users, Home, Activity, ArrowRight } from 'lucide-react';
+import logo from '@/assets/937ad1a56245dc90b89d5720a3ae46d97d7c2e84.png';
 
 export function ImpactSlide() {
   const impacts = [
-    { icon: Clock, value: '90%', label: 'Faster Emergency Detection', color: 'from-teal-400 to-cyan-400' },
-    { icon: Users, value: '24/7', label: 'Continuous Monitoring', color: 'from-cyan-400 to-blue-400' },
-    { icon: TrendingUp, value: '3x', label: 'More Check-ins', color: 'from-green-400 to-emerald-400' },
-    { icon: Heart, value: '100%', label: 'Peace of Mind', color: 'from-emerald-400 to-green-400' },
+    { icon: Activity, title: 'Improved Safety & Early Intervention', color: 'from-teal-400 to-cyan-400' },
+    { icon: Users, title: 'Reduced Caregiver Stress', color: 'from-cyan-400 to-blue-400' },
+    { icon: Home, title: 'Supports Aging in Place', color: 'from-green-400 to-emerald-400' },
   ];
 
   return (
@@ -32,37 +31,39 @@ export function ImpactSlide() {
       />
 
       {/* Content */}
-      <div className="relative z-10 px-10 max-w-6xl w-full py-8">
+      <div className="relative z-10 px-10 max-w-6xl w-full py-6">
         {/* Impact Stats */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-6"
+          className="mb-5"
         >
-          <h2 className="text-5xl font-black text-slate-800 mb-5 text-center">
+          <h2 className="text-6xl font-black text-slate-800 mb-6 text-center">
             The <span className="bg-gradient-to-r from-teal-600 to-green-600 bg-clip-text text-transparent">Impact</span>
           </h2>
           
-          <div className="grid grid-cols-2 gap-4 mb-6">
+          <div className="grid grid-cols-3 gap-5 mb-5 max-w-5xl mx-auto">
             {impacts.map((impact, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                className="p-5 bg-white border border-slate-200 rounded-2xl text-center hover:border-teal-300 hover:shadow-xl transition-all group"
+                className="p-5 bg-white border border-slate-200 rounded-2xl text-center hover:border-teal-300 hover:shadow-xl transition-all group min-h-[160px] flex flex-col items-center justify-center"
               >
-                <div className={`inline-flex p-3 bg-gradient-to-br ${impact.color} rounded-xl mb-3 shadow-md`}>
-                  <impact.icon className="w-7 h-7 text-white" />
+                <div className={`inline-flex p-2.5 bg-gradient-to-br ${impact.color} rounded-xl mb-2.5 shadow-md`}>
+                  <impact.icon className="w-6 h-6 text-white" />
                 </div>
                 
-                <div className={`text-4xl font-black mb-2 bg-gradient-to-r ${impact.color} bg-clip-text text-transparent`}>
-                  {impact.value}
-                </div>
+                {impact.value && (
+                  <div className={`text-3xl font-black mb-1.5 bg-gradient-to-r ${impact.color} bg-clip-text text-transparent`}>
+                    {impact.value}
+                  </div>
+                )}
                 
-                <div className="text-base text-slate-600">
-                  {impact.label}
+                <div className="text-base font-bold text-slate-600">
+                  {impact.title}
                 </div>
               </motion.div>
             ))}
@@ -76,11 +77,11 @@ export function ImpactSlide() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-center"
         >
-          <h3 className="text-3xl font-black text-slate-800 mb-3">
+          <h3 className="text-2xl font-black text-slate-800 mb-2">
             Because Every Second Matters
           </h3>
           
-          <p className="text-base text-slate-600 mb-6 max-w-3xl mx-auto">
+          <p className="text-sm text-slate-600 mb-4 max-w-3xl mx-auto">
             ChecKin bridges the gap between independence and safety, 
             ensuring your loved ones are never alone in an emergency
           </p>
@@ -89,20 +90,20 @@ export function ImpactSlide() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-7 py-3.5 bg-gradient-to-r from-teal-500 to-green-500 rounded-xl text-white text-base font-bold flex items-center gap-2.5 shadow-xl hover:shadow-2xl transition-shadow"
+              className="px-6 py-3 bg-gradient-to-r from-teal-500 to-green-500 rounded-xl text-white text-sm font-bold flex items-center gap-2 shadow-xl hover:shadow-2xl transition-shadow"
             >
               Join the Mission
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4" />
             </motion.button>
 
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex items-center gap-2.5"
+              className="flex items-center gap-2"
             >
-              <img src={logo} alt="ChecKin" className="w-9 h-9" />
-              <span className="text-slate-500 text-base font-medium">#ChecKin</span>
+              <img src={logo} alt="ChecKin" className="w-8 h-8" />
+              <span className="text-slate-500 text-sm font-medium">#ChecKin</span>
             </motion.div>
           </div>
         </motion.div>

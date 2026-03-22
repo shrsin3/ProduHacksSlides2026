@@ -1,12 +1,14 @@
 import { motion } from 'motion/react';
-import { Sparkles, Video, Brain, Bell, BarChart3 } from 'lucide-react';
+import { Sparkles, Video, Brain, Bell, UserPlus, AlertCircle, LayoutDashboard } from 'lucide-react';
 
 export function SolutionSlide() {
   const features = [
-    { icon: Video, label: 'Video Check-ins', color: 'text-teal-400' },
-    { icon: Brain, label: 'AI Analysis', color: 'text-cyan-400' },
-    { icon: Bell, label: 'Smart Alerts', color: 'text-green-400' },
-    { icon: BarChart3, label: 'Health Insights', color: 'text-emerald-400' },
+    { icon: UserPlus, label: 'Setup Contact', color: 'text-teal-400' },
+    { icon: Bell, label: 'Smart Notification', color: 'text-cyan-400' },
+    { icon: Video, label: 'Video Call', color: 'text-blue-400' },
+    { icon: Brain, label: 'AI Wellness Analysis', color: 'text-green-400' },
+    { icon: AlertCircle, label: 'Emergency Alert', color: 'text-emerald-400' },
+    { icon: LayoutDashboard, label: 'Caretaker Dashboard', color: 'text-lime-400' },
   ];
 
   return (
@@ -73,7 +75,7 @@ export function SolutionSlide() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex justify-center gap-4 flex-wrap mb-10"
+          className="flex justify-center gap-4 flex-wrap"
         >
           {features.map((feature, index) => (
             <motion.div
@@ -88,18 +90,6 @@ export function SolutionSlide() {
               <span className="text-base text-slate-700 font-medium">{feature.label}</span>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Highlight Box */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
-          className="p-6 bg-white border border-teal-200 rounded-3xl shadow-lg"
-        >
-          <p className="text-xl text-slate-700 italic font-medium">
-            "Peace of mind for families, independence for seniors"
-          </p>
         </motion.div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Heart, Shield } from 'lucide-react';
-import logo from '../../assets/937ad1a56245dc90b89d5720a3ae46d97d7c2e84.png';
+import logo from '@/assets/937ad1a56245dc90b89d5720a3ae46d97d7c2e84.png';
 
 export function TitleSlide() {
   return (
@@ -81,9 +81,9 @@ export function TitleSlide() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-10 inline-block px-6 py-3 bg-gradient-to-r from-teal-500 to-green-500 rounded-full text-white text-sm uppercase tracking-wider shadow-lg"
+          className="mt-10 inline-block px-6 py-3 bg-gradient-to-r from-teal-500 to-green-500 rounded-full text-white text-sm tracking-wider shadow-lg"
         >
-          Hackathon Pitch 2026
+          ProduHacks 2026
         </motion.div>
       </div>
 

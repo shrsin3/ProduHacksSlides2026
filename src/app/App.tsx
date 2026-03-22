@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { TitleSlide } from './components/TitleSlide';
 import { ProblemSlide } from './components/ProblemSlide';
 import { SolutionSlide } from './components/SolutionSlide';
-import { HowItWorksSlide } from './components/HowItWorksSlide';
-import { PlatformSlide } from './components/PlatformSlide';
 import { TechStackSlide } from './components/TechStackSlide';
 import { ImpactSlide } from './components/ImpactSlide';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -12,8 +10,6 @@ const slides = [
   TitleSlide,
   ProblemSlide,
   SolutionSlide,
-  HowItWorksSlide,
-  PlatformSlide,
   TechStackSlide,
   ImpactSlide,
 ];
@@ -44,24 +40,24 @@ export default function App() {
       <CurrentSlideComponent />
 
       {/* Navigation Controls */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-50">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-50">
         <button
           onClick={prevSlide}
           disabled={currentSlide === 0}
-          className="p-3 rounded-full bg-white/90 backdrop-blur-sm border border-teal-200 text-teal-700 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-teal-50 hover:border-teal-300 transition-all shadow-md"
+          className="p-2 rounded-full bg-white/90 backdrop-blur-sm border border-teal-200 text-teal-700 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-teal-50 hover:border-teal-300 transition-all shadow-md"
         >
-          <ChevronLeft className="w-5 h-5" />
+          <ChevronLeft className="w-4 h-4" />
         </button>
 
-        <div className="flex gap-2">
+        <div className="flex gap-1.5">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`h-2 rounded-full transition-all ${
+              className={`h-1.5 rounded-full transition-all ${
                 index === currentSlide
-                  ? 'w-8 bg-gradient-to-r from-teal-500 to-green-500'
-                  : 'w-2 bg-slate-300 hover:bg-slate-400'
+                  ? 'w-6 bg-gradient-to-r from-teal-500 to-green-500'
+                  : 'w-1.5 bg-slate-300 hover:bg-slate-400'
               }`}
             />
           ))}
@@ -70,14 +66,14 @@ export default function App() {
         <button
           onClick={nextSlide}
           disabled={currentSlide === slides.length - 1}
-          className="p-3 rounded-full bg-white/90 backdrop-blur-sm border border-teal-200 text-teal-700 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-teal-50 hover:border-teal-300 transition-all shadow-md"
+          className="p-2 rounded-full bg-white/90 backdrop-blur-sm border border-teal-200 text-teal-700 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-teal-50 hover:border-teal-300 transition-all shadow-md"
         >
-          <ChevronRight className="w-5 h-5" />
+          <ChevronRight className="w-4 h-4" />
         </button>
       </div>
 
       {/* Slide Counter */}
-      <div className="absolute top-8 right-8 text-slate-500 text-sm z-50 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-full border border-slate-200">
+      <div className="absolute top-6 right-6 text-slate-500 text-xs z-50 bg-white/80 backdrop-blur-sm px-2.5 py-1.5 rounded-full border border-slate-200">
         {currentSlide + 1} / {slides.length}
       </div>
     </div>
