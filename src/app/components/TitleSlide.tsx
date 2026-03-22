@@ -43,7 +43,7 @@ export function TitleSlide() {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-6 flex justify-center"
         >
           <img src={logo} alt="ChecKin Logo" className="w-28 h-28 drop-shadow-lg" />
@@ -52,7 +52,7 @@ export function TitleSlide() {
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className="text-6xl font-black mb-5 bg-gradient-to-r from-teal-600 via-cyan-600 to-green-600 bg-clip-text text-transparent"
         >
           ChecKin
@@ -70,29 +70,51 @@ export function TitleSlide() {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg text-slate-600 max-w-2xl mx-auto"
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-lg text-slate-600 max-w-2xl mx-auto mb-10"
         >
           AI-powered health monitoring that keeps your loved ones safe, 
           even when you can't be there
         </motion.p>
 
+        {/* ProduHacks Badge */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-10 inline-block px-6 py-3 bg-gradient-to-r from-teal-500 to-green-500 rounded-full text-white text-sm tracking-wider shadow-lg"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mb-8"
         >
-          ProduHacks 2026
+          <div className="inline-block px-6 py-3 bg-gradient-to-r from-teal-500 to-green-500 rounded-full text-white text-sm tracking-wider shadow-lg">
+            ProduHacks 2026
+          </div>
+        </motion.div>
+
+        {/* Team Information */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="space-y-4 mb-16"
+        >
+          <h3 className="text-xl font-bold text-teal-700">Team a67z</h3>
+          <div className="flex gap-6 justify-center items-center flex-wrap max-w-2xl mx-auto">
+            <span className="text-sm font-semibold text-slate-700">Connor Morrison</span>
+            <span className="text-slate-300">•</span>
+            <span className="text-sm font-semibold text-slate-700">Manushree Singhania</span>
+            <span className="text-slate-300">•</span>
+            <span className="text-sm font-semibold text-slate-700">Daniel Lima</span>
+            <span className="text-slate-300">•</span>
+            <span className="text-sm font-semibold text-slate-700">Venus Rezvanpour</span>
+          </div>
         </motion.div>
       </div>
 
-      {/* Bottom Decoration */}
+      {/* Bottom Decoration with more spacing */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1 }}
-        className="absolute bottom-20 left-1/2 -translate-x-1/2 text-slate-500 text-sm"
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="absolute bottom-16 left-1/2 -translate-x-1/2 text-slate-400 text-xs"
       >
         Press → or Space to continue
       </motion.div>
